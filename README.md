@@ -21,7 +21,23 @@ Install my-project with npm
 ```bash
 npm install harmony-color
 ```
-    
+## Importation and using
+**Index.js :**
+```bash
+import { generateColorPalette } from "harmony-color"
+```
+**Feature :**
+
+```bash
+// Choose #3498db, generate triadic color in hex format (XXX, XXX, XXX)
+const hexColor = "#3498db"; // Bleu
+const newColor = generateColorPalette(hexColor, 'triadic', 'hex');
+console.log(newColor)
+```
+**Results :** 
+```bash
+[ 'rgb(51, 152, 219)', 'rgb(219, 51, 152)', 'rgb(152, 219, 51)' ]
+```
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
