@@ -17,6 +17,7 @@ Harmony Color is an open-source npm package (MIT Licenses) that helps harmonize 
 - **Output**: Harmonized colors in the format of your choice (hexadecimal, RGB, or HSL).
 
 ## Installation
+By following: https://www.npmjs.com/package/harmony-color
 
 Install my-project with npm
 
