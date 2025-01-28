@@ -1,7 +1,12 @@
-// generation of color palette
-// types : analogous, complementary, split complementary, triadic, tetradic, square, monochromatic
-// color code converter
-
+/**
+ * Convertit une couleur d'un format à un autre.
+ * 
+ * @param {string} color - La couleur à convertir (en hex, rgb ou hsl).
+ * @param {string} format - Le format de sortie souhaité (hex, rgb, hsl).
+ * @returns {string} La couleur convertie dans le format spécifié.
+ * @throws {Error} Si le format de couleur initial est invalide.
+ * @throws {Error} Si le format de sortie est invalide.
+  */
 export const convertColor = (color, format) => {
 // analyze color code to check the initial type
     if (color[0] === '#') {
@@ -13,6 +18,15 @@ export const convertColor = (color, format) => {
     }
     }
 
+
+
+/**
+ * Convertit une couleur hexadécimale en RGB ou HSL.
+ * 
+ * @param {string} hex - La couleur hexadécimale à convertir.
+ * @param {string} format - Le format de sortie souhaité (rgb, hsl).
+ * @returns {string} La couleur convertie dans le format spécifié.
+ */
 export const hexToRgb = (hex, format) => {
     let r = parseInt(hex.substring(1, 3), 16);
     let g = parseInt(hex.substring(3, 5), 16);
@@ -26,6 +40,19 @@ export const hexToRgb = (hex, format) => {
     }
 }
 
+
+/**
+ * Convertit une couleur RGB en hexadécimal ou HSL.
+ * 
+ * @param {string} rgb - La couleur RGB à convertir.
+ * @param {string} format - Le format de sortie souhaité (hex, hsl).
+ * @returns {string} La couleur convertie dans le format spécifié.
+ * @throws {Error} Si le format de sortie est invalide.
+ * @throws {Error} Si le format de couleur initial est invalide.
+ * @throws {Error} Si les valeurs RGB sont en dehors de la plage 0-255.
+ * @throws {Error} Si les valeurs RGB ne sont pas des entiers.
+ * 
+ */
 export const rgbToHex = (rgb, format) => {
     let rgbArr = rgb.match(/\d+/g);
     let r = parseInt(rgbArr[0]);
@@ -39,6 +66,16 @@ export const rgbToHex = (rgb, format) => {
     }
 }
 
+
+/**
+ * Convertit une couleur RGB en HSL ou vice versa.
+ *  
+ * @param {string} rgb - La couleur RGB à convertir.
+ * @param {string} format - Le format de sortie souhaité (rgb, hsl).
+ * @returns {string} La couleur convertie dans le format spécifié.
+ * @throws {Error} Si le format de sortie est invalide.
+ * @throws {Error} Si le format de couleur initial est invalide.
+ */
 export const rgbToHsl = (rgb, format) => {
     let rgbArr = rgb.match(/\d+/g);
     let r = parseInt(rgbArr[0]) / 255;
@@ -76,6 +113,15 @@ export const rgbToHsl = (rgb, format) => {
 }
 
 
+/**
+ * Convertit une couleur HSL en RGB ou vice versa.
+ * 
+ * @param {string} hsl - La couleur HSL à convertir.
+ * @param {string} format - Le format de sortie souhaité (rgb, hex).
+ * @returns {string} La couleur convertie dans le format spécifié.
+ * @throws {Error} Si le format de sortie est invalide.
+ * 
+ */
 export const hslToRgb = (hsl, format) => {
     let hslArr = hsl.match(/\d+/g);
     let h = parseInt(hslArr[0]) / 360;
@@ -107,8 +153,18 @@ export const hslToRgb = (hsl, format) => {
 
 
 
-// Helper function to create HSL string
+/**
+ * Convertit des valeurs HSL en une chaîne de couleur HSL.
+ * 
+ * @param {number} h - La valeur de teinte (0-360).
+ * @param {number} s - La valeur de saturation (0-100).
+ * @param {number} l - La valeur de luminosité (0-100).
+ * @returns {string} La chaîne de couleur HSL.
+ * 
+ */
 const hslToString = (h, s, l) => `hsl(${h}, ${s}%, ${l}%)`;
+
+
 
 /**
  * Génère une palette de couleurs basée sur un type spécifique.
@@ -116,6 +172,22 @@ const hslToString = (h, s, l) => `hsl(${h}, ${s}%, ${l}%)`;
  * @param {string} type - Le type de palette à générer (analogous, complementary, split complementary, triadic, tetradic, square, monochromatic).
  * @param {string} format - Le format des couleurs de sortie (hex, rgb, hsl).
  * @returns {string[]} Un tableau de couleurs dans le format spécifié.
+ */
+/**
+ * Generates a color palette based on the given color, type, and format.
+ *
+ * @param {string} color - The base color in any valid CSS color format (e.g., hex, rgb, hsl).
+ * @param {string} type - The type of color palette to generate. Valid options are:
+ *   - 'analogous': Colors adjacent on the color wheel.
+ *   - 'complementary': Color opposite on the color wheel.
+ *   - 'split complementary': Two colors adjacent to the complementary color.
+ *   - 'triadic': Three colors spaced 120 degrees apart.
+ *   - 'tetradic': Four colors forming two complementary pairs.
+ *   - 'square': Four colors spaced 90 degrees apart.
+ *   - 'monochromatic': Variations in saturation and lightness.
+ * @param {string} format - The desired output format for the colors (e.g., 'hex', 'rgb', 'hsl').
+ * @returns {string[]} An array of colors in the specified format.
+ * @throws {Error} If an invalid palette type is provided.
  */
 export const generateColorPalette = (color, type, format) => {
     // Convertir la couleur de base en HSL pour faciliter les manipulations
