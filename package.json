@@ -1,15 +1,23 @@
 {
   "name": "harmony-color",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "type": "module",
   "main": "index.js",
+  "homepage": "https://github.com/antohugo/harmony-color",
+  "repository": {
+    "type": "github",
+    "url": "git+https://github.com/antohugo/harmony-color.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "github",
+    "repositories"
+  ],
+  "author": "Hugo Antomarchi",
+  "license": "MIT",
   "dependencies": {
     "node-fetch": "^3.3.2"
   }
