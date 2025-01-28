@@ -5,14 +5,16 @@ Harmony Color is an open-source npm package (MIT Licenses) that helps harmonize 
 
 ## Features
 
-Input: A base color in hexadecimal format (#RRGGBB).
-Modes:
-
-    Complementary: Produces a color directly opposite to the input color.
-    Triadic: Generates three colors evenly spaced on the color wheel.
-    Tetradic: Creates four colors, forming a rectangle on the color wheel.
-
-Output: One or more harmonized colors, also in hexadecimal format.
+- **Input**: A base color in hexadecimal (`#RRGGBB`), RGB (`rgb(r, g, b)`), or HSL (`hsl(h, s%, l%)`) format.
+- **Harmonization Modes**:
+  - **Complementary**: Produces a color directly opposite to the input color on the color wheel.
+  - **Triadic**: Generates three colors evenly spaced around the color wheel.
+  - **Tetradic**: Creates four colors forming two complementary pairs.
+  - **Analogous**: Produces colors adjacent to the base color on the color wheel.
+  - **Split Complementary**: Generates two colors adjacent to the complementary color.
+  - **Square**: Produces four colors evenly spaced at 90-degree intervals.
+  - **Monochromatic**: Creates variations of the base color by adjusting saturation and lightness.
+- **Output**: Harmonized colors in the format of your choice (hexadecimal, RGB, or HSL).
 
 ## Installation
 
@@ -48,4 +50,8 @@ console.log(newColor)
 Contributions are always welcome!
 
 
-
+## Authors
+- [@antohugo](https://github.com/antohugo)
+- [@nathanddrl](https://github.com/nathanddrl)
+- [@Henrique-Rds](https://github.com/Henrique-Rds)
+- [@yewolf1](https://github.com/yewolf1)
